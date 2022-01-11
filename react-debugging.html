@@ -63,22 +63,36 @@
           // No need to change anything ABOVE this line ^
 
           return(
+            //needed JSX fragments wrapping the code inside of return
+            //also needed to add .this to the drawCard and shuffle methods
+            <>
               <h1>Draw a Card</h1>
-              <button onClick={}>
+             
+              <button onClick={this.drawCard}>
+                
                 Click to Draw a Card
-              </button>
-              <button onClick={shuffle}>
-                Return Cards and Shuffle Deck
-              </button>
-              <div style={handStyles}>
-                {this.state.hand.map((card, index) => {
+              
+                </button>
+              
+              
+                <button onClick={this.shuffle}>
+              
+                  Return Cards and Shuffle Deck
+              
+                  </button>
+              
+                  <div style={handStyles}>
+              
+                    {this.state.hand.map((card, index) => {
                   return (
-                    <div style={cardStyles} key={index}>
+              
+                  <div style={this.cardStyles} key={index}>
                       {card}
                     </div>
                   )
                 })}
               </div>
+              </>
           )
         }
       }
